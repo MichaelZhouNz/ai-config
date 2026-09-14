@@ -1,0 +1,23 @@
+# Machine-specific / secret — must never be committed
+settings.local.json
+.credentials.json
+*.local.json
+!*.example.json
+
+# Claude Code state that is NOT config
+projects/
+history.jsonl
+plugins/
+cache/
+shell-snapshots/
+file-history/
+sessions/
+session-env/
+paste-cache/
+tasks/
+backups/
+stats-cache.json
+
+# OS
+Thumbs.db
+desktop.ini

@@ -1,0 +1,17 @@
+{
+  "_comment": "Machine-specific. Copy to ~/.claude/settings.local.json and edit. NEVER commit the real one.",
+  "env": {
+    "CLAUDE_CLI_PATH": "C:\Users\<you>\.local\bin\claude.exe"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "\"C:\Program Files\nodejs\node.exe\" \"C:\Users\<you>\.claude\hud-launcher.mjs\""
+  },
+  "extraKnownMarketplaces": {
+    "compound-engineering-plugin": {
+      "source": { "source": "directory", "path": "C:\Users\<you>\.claude\plugins\marketplaces\compound-engineering-plugin" }
+    }
+  },
+  "enabledPlugins": { "compound-engineering@compound-engineering-plugin": true },
+  "permissions": { "allow": [] }
+}

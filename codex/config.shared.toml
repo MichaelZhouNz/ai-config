@@ -1,0 +1,36 @@
+# Portable Codex settings — the subset of ~/.codex/config.toml that is safe to
+# carry between machines.
+#
+# install.ps1 deliberately does NOT write this into ~/.codex/config.toml.
+# Your live config holds machine state ([projects] trust levels, [marketplaces]
+# with absolute \?\C:\ paths) and there is no TOML parser in the install script,
+# so a merge would risk destroying it. Apply these keys by hand, once per machine.
+
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
+
+[windows]
+sandbox = "unelevated"
+
+# npx-based, so portable as-is
+[mcp_servers.playwright]
+command = "npx"
+args = ["@playwright/mcp@latest"]
+
+[mcp_servers.playwright.tools.browser_navigate]
+approval_mode = "approve"
+
+[mcp_servers.playwright.tools.browser_run_code_unsafe]
+approval_mode = "approve"
+
+# NOT copied from your current config — this is an addition, left commented.
+# shared/guidelines/orchestration.md tells the agent to delegate to sub-agents;
+# on Codex that requires spawn_agent/wait_agent/close_agent, which this enables.
+# Uncomment if you want that guideline to actually be actionable there.
+#
+# [features]
+# multi_agent = true
+
+# Required for codex/hooks.json (PR-description gate) to run.
+[features]
+hooks = true

@@ -1,0 +1,13 @@
+# Machine-specific Codex config — stays in ~/.codex/config.toml, never committed.
+# Listed here so you know what NOT to sync.
+#
+# [projects.'<absolute path>']     trust_level  — per-machine, and yours include
+#                                                work paths
+# [marketplaces.*]                 source = '\?\C:\...' — local absolute paths
+# [plugins."x@local-marketplace"]  tied to the above, won't resolve elsewhere
+# [notice.model_migrations]        state, not config
+#
+# Also never sync:
+#   ~/.codex/auth.json          credentials
+#   ~/.codex/rules/*.rules      approval cache; contains project-specific paths
+#   ~/.codex/*.sqlite           logs, memories, sessions
