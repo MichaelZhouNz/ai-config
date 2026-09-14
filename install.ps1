@@ -60,7 +60,7 @@ foreach ($d in 'skills','commands','guidelines') {
 }
 
 Write-Host "`nCopying Claude config files:" -ForegroundColor Cyan
-foreach ($f in 'CLAUDE.md','settings.json','keybindings.json') {
+foreach ($f in 'CLAUDE.md','ORCHESTRATION.md','settings.json','keybindings.json') {
     Copy-Templated (Join-Path $repo "claude\$f") (Join-Path $claudeDir $f)
 }
 

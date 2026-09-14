@@ -26,7 +26,7 @@ Changes under `shared/skills`, `shared/commands` and `shared/guidelines` are liv
 | `shared/skills/*` | `~/.claude/skills/` | `~/.codex/skills/`, `~/.agents/skills/` | junction |
 | `shared/commands/*.md` | `~/.claude/commands/` | – | junction |
 | `shared/hooks/*.mjs` | `~/.claude/hooks/` | `~/.codex/hooks/` | copy, `{{HOME}}` substituted |
-| `claude/CLAUDE.md`, `settings.json`, `keybindings.json` | `~/.claude/` | – | copy, `{{HOME}}` substituted |
+| `claude/CLAUDE.md`, `ORCHESTRATION.md`, `settings.json`, `keybindings.json` | `~/.claude/` | – | copy, `{{HOME}}` substituted |
 | `codex/hooks.json` | – | merged into `~/.codex/hooks.json` (other events kept) | merge |
 | `codex/config.shared.toml` | – | apply by hand | manual |
 
@@ -35,7 +35,9 @@ Changes under `shared/skills`, `shared/commands` and `shared/guidelines` are liv
 Loaded into every session of both tools:
 
 - **git-policy** – never commit, push or open a PR without explicit approval each time.
-- **orchestration** – act as the orchestrator; delegate implementation to sub-agents.
+- **orchestration** – act as the orchestrator; delegate implementation to sub-agents. Codex gets the
+  generic `shared/guidelines/orchestration.md`; Claude gets `claude/ORCHESTRATION.md`, which adds the
+  model-tier routing table (haiku / sonnet / opus / fable → lookup / design / implement skills).
 - **KARPATHY** – think before coding, simplicity first, surgical changes, goal-driven execution.
 - **RTK** – use the `rtk` token-saving proxy for shell commands.
 
